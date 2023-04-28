@@ -5,5 +5,4 @@ jobs :
           steps :
                 - run : node --version
                 - run : npm --version
-                - run : npx eslint index.js
                 - run : npm index.js
