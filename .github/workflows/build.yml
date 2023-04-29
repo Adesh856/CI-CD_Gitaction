@@ -1,8 +1,15 @@
-on : push
-jobs :
-      first-job :
-          runs-on : ubuntu-latest
-          steps :
-                - run : node --version
-                - run : npm --version
-                - run : node index.js
+name: Print Node.js Version
+on: push
+
+jobs:
+  print-node-version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - name: Print Node.js version
+      run: node -v
